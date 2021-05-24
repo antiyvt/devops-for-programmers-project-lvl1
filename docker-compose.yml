@@ -4,11 +4,7 @@ services:
         build:
             context: .
             dockerfile: Dockerfile
-            image: antivt/nodos
-        ports:
-            - "8080:8080"
-        hostname: app
-        networks:
-            - net
-        mem_limit: 256M
-        restart: always
+        image: antivt/nodos
+        volumes:
+            - .:/app
+        command: npm test
