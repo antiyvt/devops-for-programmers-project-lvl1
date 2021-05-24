@@ -1,0 +1,14 @@
+version: "3.9"
+services:
+    app:
+        build:
+            context: .
+            dockerfile: Dockerfile
+            image: antivt/nodos
+        ports:
+            - "8080:8080"
+        hostname: app
+        networks:
+            - net
+        mem_limit: 256M
+        restart: always
