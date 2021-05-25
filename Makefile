@@ -4,11 +4,14 @@ server:
 test:
 	npm -s test
 
-build:
-	docker build -t antivt/nodos .
+docker-build:
+	docker build -t antiyvt/nodos .
 
+docker-push:
+	docker build -t antiyvt/nodos -f Dockerfile.production .
+	docker push antiyvt/nodos
 docker-run:
-	docker run -d -p 8080:8080 --name nodos antivt/nodos
+	docker run -d -p 8080:8080 --name nodos antiyvt/nodos
 
 docker-stop:
 	docker stop nodos
